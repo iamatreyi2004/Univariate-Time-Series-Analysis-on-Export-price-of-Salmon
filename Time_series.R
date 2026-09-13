@@ -1,15 +1,10 @@
 rm(list=ls())
 library(astsa)
 data=salmon
-data=as.vector(data)
-data=data[c(-1,-2,-3,-4)]
-data
 data=ts(data,start=2004,end=c(2016,12),freq=12)
-data
 plot(data,type="l",main="Time series plot",ylab="Export price of Salmon")
 
 n=length(data)
-n
 i=ceiling(n*0.8)
 train=data[1:i]
 test=data[(i+1):n]
